@@ -86,7 +86,7 @@ export const getAllTimes = (timeCatMap: TimeCatMap) => {
 };
 
 export const timeDisplay = (minutes: number): string => {
-	return `${minToTime(minutes)} (${minToTimeDecimal(minutes)} hrs)`;
+	return `${minToTime(minutes)} (${minToTimeDecimal(minutes)})`;
 };
 
 interface TimeCategoriesReportProps {
@@ -125,7 +125,7 @@ export const TimeCategoriesReport = (props: TimeCategoriesReportProps) => {
 	return (
 		<div>
 			{props.categories.map((c, i) => (
-				<TimeCategoryReport key={`timecategory$i`} category={c} />
+				<TimeCategoryReport key={`timecategory${i}`} category={c} />
 			))}
 		</div>
 	);

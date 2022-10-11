@@ -74,7 +74,7 @@ export const minutesDiff = (
 };
 
 export const minToTime = (minutes: number) => {
-	const hoursStr = String(minutes / 60);
+	const hoursStr = String(Math.floor(minutes / 60));
 
 	let minutesString = String(minutes % 60);
 
@@ -85,16 +85,19 @@ export const minToTime = (minutes: number) => {
 	return `${hoursStr}:${minutesString}`;
 };
 
+const roundNearestQuarter = (number: number) => {
+	return (Math.round(number * 4) / 4).toFixed(2);
+};
+
 export const minToTimeDecimal = (minutes: number) => {
-	const hoursStr = String(minutes / 60);
+	const unrounded = (minutes / 60).toFixed(2);
+	const hoursStr = String(roundNearestQuarter(minutes / 60));
 
-	let minutesStr = String(Math.round(((minutes % 60) / 60) * 100));
-
-	if (minutesStr.length === 1) {
-		minutesStr = `0${minutesStr}`;
+	if (unrounded !== hoursStr) {
+		return `${hoursStr} hrs - ${unrounded} hrs before rounding`;
 	}
 
-	return `${hoursStr}.${minutesStr}`;
+	return `${hoursStr} hrs`;
 };
 
 export class TimeCategory {
