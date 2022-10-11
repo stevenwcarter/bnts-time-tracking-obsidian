@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimeTrackingReport } from './TimeTrackingReport';
+import { TimeTrackingReport } from '@stevenwcarter/time-tracking-components';
 import { createRoot, Root } from 'react-dom/client';
 import {
 	App,
