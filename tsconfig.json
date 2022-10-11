@@ -14,13 +14,14 @@
 	"strictNullChecks": true,
 	"jsx": "react-jsx",
     "lib": [
-      "DOM",
+      "dom",
       "ES5",
       "ES6",
       "ES7"
     ]
   },
   "include": [
-    "**/*.ts"
-, "TimeTrackingReport.tsx"  ]
+    "**/*.ts",
+	"**/*.tsx"
+  ]
 }
