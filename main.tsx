@@ -88,7 +88,7 @@ export default class BTTPlugin extends Plugin {
 	}
 }
 
-export class ReactRenderer extends MarkdownRenderChild {
+class ReactRenderer extends MarkdownRenderChild {
 	root: Root;
 
 	public constructor(public init: any, public element: JSX.Element) {
@@ -107,6 +107,6 @@ export class ReactRenderer extends MarkdownRenderChild {
 	}
 }
 
-export function createTimeTrackingView(init: any, source: any): MarkdownRenderChild {
+function createTimeTrackingView(init: any, source: any): MarkdownRenderChild {
 	return new ReactRenderer(init, <TimeTrackingReport source={source} />);
 }
